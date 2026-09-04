@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .block {
+        width: 50%;
+        background: red;
+    }
+
+    #blok1 {
+        background: blue;
+    }
+
+    div {
+        width: 100%;
+        background: pink;
+    }
+</style>
+
+<body>
+    <main>
+        <div id="blok1" class="block">
+            aaa
+        </div>
+    </main>
+</body>
+<script>
+    let blok = document.querySelector("#blok1")
+    blok.addEventListener("click", function () {
+        console.log("Blok Klikniety")
+    })
+
+</script>
+
+</html>
