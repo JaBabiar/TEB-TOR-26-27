@@ -1,0 +1,67 @@
+let gry = {
+  "games": [
+    {
+      "title": "Borderlands 3",
+      "developer": "Gearbox Software",
+      "publisher": "2K Games",
+      "release_date": "2019-09-13",
+      "genre": [
+        "Action RPG",
+        "First-Person Shooter",
+        "Looter Shooter"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X/S"
+      ],
+      "esrb_rating": "M (Mature 17+)",
+      "description": "The original looter-shooter returns, packed with a bazillion new guns and a new band of psychotic Vault Hunters. Lead one of four new Vault Hunters and take on new worlds and enemies in this action-packed FPS."
+    },
+    {
+      "title": "The Witcher 3: Wild Hunt",
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "release_date": "2015-05-19",
+      "genre": [
+        "Action RPG",
+        "Open World"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X/S",
+        "Nintendo Switch"
+      ],
+      "esrb_rating": "M (Mature 17+)",
+      "description": "An epic open-world RPG set in a visually stunning fantasy universe full of meaningful choices and impactful consequences. You play as Geralt of Rivia, a monster hunter for hire, in a world where merchant empires war for dominance."
+    },
+    {
+      "title": "Cyberpunk 2077",
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "release_date": "2020-12-10",
+      "genre": [
+        "Action RPG",
+        "Open World",
+        "First-Person"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X/S"
+      ],
+      "esrb_rating": "M (Mature 17+)",
+      "description": "An open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification. Play as V, a cyberpunk mercenary in pursuit of a unique implant that is the key to immortality."
+    }
+  ]
+}
+let koszyk = []
+
+console.log(gry.games)

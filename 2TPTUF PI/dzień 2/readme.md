@@ -48,3 +48,12 @@ QuerySelector - Ten sam selector co w CSS
     })
 
 ```
+## Metody układania bloków
+**`display: flow-root`**
+* zamyka opływanie bloków 
+* działa z `float:left/right/center/start/end`
+* Blokuje zapadanie sie bloków przed i po
+****`display: flex`**
+* Automatycznie rozszerza bloki
+* Trzyma bloki w jednej lini o ile nie mamy `flex-wrap:wrap`
+* możliwość ustawienia w kolumne za pomoca `flex-direction:colum`

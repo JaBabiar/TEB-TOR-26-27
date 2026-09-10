@@ -20,6 +20,21 @@
         width: 100%;
         background: pink;
     }
+    .flex{
+        width: 800px;
+        height: 800px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: red;
+        gap: 20px;
+       
+    }
+    .flex div{
+    
+        background-color: aliceblue;
+        height: 400px;
+    }
 </style>
 
 <body>
@@ -27,12 +42,33 @@
         <div id="blok1" class="block">
             aaa
         </div>
+
+
+        <section class="flex">
+            <div style=" flex: 1;">
+            </div>
+            <div style=" flex: 2;">
+            </div>
+        </section>
+        <section class="flow-root">
+            <form>
+                <input type="text" id="imie">
+                <input type="text" id="nazwisko">
+                <input type="submit" value="">
+            </form>
+        </section>
     </main>
 </body>
 <script>
     let blok = document.querySelector("#blok1")
     blok.addEventListener("click", function () {
         console.log("Blok Klikniety")
+    })
+    let form = document.querySelector("form")
+    form.addEventListener("submit", function(e){
+        e.preventDefault()  
+        console.log(form.children.imie.value)
+        console.log(form.children.nazwisko.value)
     })
 
 </script>
