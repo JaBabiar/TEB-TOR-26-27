@@ -1,0 +1,24 @@
+CREATE DATABASE agencja_nieruchomosci;
+
+USE agencja_nieruchomosci;
+
+
+CREATE TABLE mieszkania (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    miasto VARCHAR(50) NOT NULL,
+    ulica VARCHAR(100) NOT NULL,
+    metraz DECIMAL(5,2) NOT NULL,
+    liczba_pokoi INT NOT NULL,
+    cena_wynajmu DECIMAL(7,2) NOT NULL
+);
+
+
+INSERT INTO mieszkania (miasto, ulica, metraz, liczba_pokoi, cena_wynajmu) VALUES
+('Toruń', 'ul. Lubicka', 48.50, 2, 2400.00),
+('Toruń', 'ul. Szeroka', 65.00, 3, 3200.00),
+('Toruń', 'ul. Bydgoska', 32.00, 1, 1850.00),
+('Toruń', 'ul. Legionów', 54.20, 2, 2600.00),
+('Toruń', 'ul. Mickiewicza', 80.00, 4, 3800.00),
+('Toruń', 'ul. Chełmińska', 42.00, 2, 2100.00),
+('Toruń', 'Szosa Lubicka', 38.50, 1, 1950.00),
+('Toruń', 'ul. Gagarina', 50.00, 2, 2500.00);
