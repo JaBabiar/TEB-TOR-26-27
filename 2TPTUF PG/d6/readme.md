@@ -23,3 +23,23 @@
 - Storna panel.php zabezpieczona przed włamaniem 
 - status zalogowania pozostaje w sesji 
   
+## Rozwiazanie 
+
+### Cz1 - Baza danych
+```sql
+CREATE TABLE users(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    login varchar(64) UNIQUE NOT NULL,
+    pass varchar(255) NOT NULL,
+    rola varchar(32) NOT NULL
+);
+
+CREATE TABLE posts(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    title varchar(128) NOT null,
+	tresc TEXT NOT NULL
+)
+INSERT INTO users(login, pass, rola) VALUES ("admin", "$argon2id$v=19$m=32768,t=3,p=1$jV8OFGqtM2p374R0Tof2nw$LhF45TksuJPRYyobI5rqGYDI2003kbD+EpFr5mrn8bw", "admin")
+
+--- Haslo to admin24 wykonane hashem argon2id
+```
