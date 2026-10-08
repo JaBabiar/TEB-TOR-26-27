@@ -1,27 +1,27 @@
+class Szkola:
+    def __init__(self, szkola, miasto):
+        self.szkola = szkola
+        self.miasto = miasto
+        self.klasy = []
+    def policz_uczniow(self):
+        suma = 0
+        for i in range (0, len(self.klasy)):
+            suma += self.klasy[i].uczniowie
+        print(suma)
 
-import  random
+class Klasa:
+    def __init__(self, klasa, rok, uczniowie):
+        self.klasa = klasa
+        self.rok = rok
+        self.uczniowie = uczniowie
 
+nazwa_szkoly = input("Podaj Nazwe szkoły: ")
+miasto = input("Podaj miasto: ")
 
-class Pizza:
-    def __init__(self, skibidtoilet):
-        self.nazwa = "Pizza " + skibidtoilet
-        self.cena = random.randint(1, 200)
-        SELF.KWALKI = 8
-    def podziel(self, osoby):
+szkola = Szkola(nazwa_szkoly, miasto)
+szkola.klasy.append(Klasa("4TP", 4, 17))# doda na koniec listy obiekt Klasa("")
 
+szkola.klasy += [Klasa("2TPTUF", 2, 18)] # złączy listy [] + [Klasa("")]
+print(szkola.klasy)
 
-
-tablicaPizza = [
-"4 Sery", "Szynka", "Szefowska"
-]
-obiektyPizza = []
-
-for el in tablicaPizza:
-    obiektyPizza.append(Pizza(el))
-
-for i in range(len(obiektyPizza)):
-    print(obiektyPizza[i])
-
-
-
-
+szkola.policz_uczniow()
