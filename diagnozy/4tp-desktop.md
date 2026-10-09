@@ -14,18 +14,18 @@ Zaprojektuj główne okno aplikacji wykorzystując widżet zakładek (`QTabWidge
 **Zakładka 1: Rejestracja zawodnika**
 Formularz powinien wykorzystywać odpowiednie układy (Layouts – np. `QFormLayout` lub `QVBoxLayout`) i zawierać:
 
-1. Pole tekstowe na **Pseudonim (Nick)** (`QLineEdit`).
-2. Pole tekstowe na **Adres e-mail** (`QLineEdit`).
-3. Listę rozwijaną na **Wybór gry** (`QComboBox`) z opcjami: *CS2, League of Legends, Valorant, Deadlock*.
-4. Grupę przycisków opcji (`QRadioButton`) schowaną w `QGroupBox` z wyborem poziomu: *Amator, Półprofesjonalista, Profesjonalista*.
-5. Pole wyboru (`QCheckBox`) z tekstem: *Akceptuję regulamin turnieju*.
-6. Przycisk (`QPushButton`) oznaczony jako **Zarejestruj**.
-7. Obszar komunikatów (`QLabel` lub `QStatusBar`) do wyświetlania błędów lub potwierdzeń.
+1. Pole tekstowe na **Pseudonim (Nick)** .
+2. Pole tekstowe na **Adres e-mail** .
+3. Listę rozwijaną na **Wybór gry**  z opcjami: *CS2, League of Legends, Valorant, Deadlock*.
+4. Grupę przycisków opcji schowaną w  z wyborem poziomu: *Amator, Półprofesjonalista, Profesjonalista*.
+5. Pole wyboru  z tekstem: *Akceptuję regulamin turnieju*.
+6. Przycisk  oznaczony jako **Zarejestruj**.
+7. Obszar komunikatów  do wyświetlania błędów lub potwierdzeń.
 
 **Zakładka 2: Lista zawodników**
 
-1. Widżet listy (`QListWidget` lub `QTextEdit` z trybem tylko do odczytu) wyświetlający dodanych zawodników.
-2. Przycisk (`QPushButton`) oznaczony jako **Zapisz do pliku**.
+1. Widżet listy wyświetlający dodanych zawodników.
+2. Przycisk oznaczony jako **Zapisz do pliku**.
 
 ### Część 2: Wymagania Dostępności (WCAG)
 
@@ -58,7 +58,3 @@ Napisz skrypt `main.py`, który obsłuży zaprojektowany interfejs.
 1. Po kliknięciu przycisku **Zapisz do pliku**, skrypt pobiera wszystkie elementy z listy wprowadzonych zawodników.
 2. Dane są dopisywane (tryb `a` - append) do pliku tekstowego `zawodnicy.txt`.
 3. Skrypt wykorzystuje obsługę wyjątków (`try...except`), aby zapobiec awarii w przypadku braku uprawnień do zapisu pliku.
-
-
-
-**Próg zaliczenia:** 50% (13 punktów).
