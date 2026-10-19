@@ -94,6 +94,7 @@ INSERT INTO produkty(nazwa,producent,cena) VALUES
 
 
 ## 19.10.2026
+
 Twoim zadaniem jest stworzenie prostego formularza wyszukiwania, który pozwoli użytkownikowi wpisać tytuł filmu oraz wybrać jego gatunek. Ponieważ używamy metody GET, dane nie są wysyłane "w tle", ale doklejane do adresu URL w przeglądarce.
 
 - Utwórz plik index.html.
@@ -102,13 +103,11 @@ Twoim zadaniem jest stworzenie prostego formularza wyszukiwania, który pozwoli 
 - Dodaj listę rozwijaną (<select>) z wyborem gatunku. Ważne: Lista musi mieć atrybut name="gatunek"
 
 
-```sql
+```php
 
--- Tworzymy bazę danych
 CREATE DATABASE IF NOT EXISTS wyszukiwarka CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
 USE wyszukiwarka;
 
--- Tworzymy tabelę filmów
 CREATE TABLE IF NOT EXISTS filmy (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tytul VARCHAR(150) NOT NULL,
@@ -131,4 +130,3 @@ INSERT INTO filmy (tytul, gatunek, rok) VALUES
 ('Gladiator', 'akcja', 2000);
 
 ```
-### 
