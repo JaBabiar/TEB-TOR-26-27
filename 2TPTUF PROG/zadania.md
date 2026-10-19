@@ -98,9 +98,9 @@ INSERT INTO produkty(nazwa,producent,cena) VALUES
 Twoim zadaniem jest stworzenie prostego formularza wyszukiwania, który pozwoli użytkownikowi wpisać tytuł filmu oraz wybrać jego gatunek. Ponieważ używamy metody GET, dane nie są wysyłane "w tle", ale doklejane do adresu URL w przeglądarce.
 
 - Utwórz plik index.html.
-- Stwórz formularz (<form>), który jako metodę przesyłania danych używa GET.
+- Stwórz formularz, który jako metodę przesyłania danych używa GET.
 - Dodaj pole tekstowe do wpisania tytułu filmu. Ważne: Pole musi mieć atrybut name="tytul".
-- Dodaj listę rozwijaną (<select>) z wyborem gatunku. Ważne: Lista musi mieć atrybut name="gatunek"
+- Dodaj listę rozwijaną z wyborem gatunku. Ważne: Lista musi mieć atrybut name="gatunek"
 
 
 ```php
