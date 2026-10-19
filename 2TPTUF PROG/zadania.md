@@ -101,7 +101,9 @@ Twoim zadaniem jest stworzenie prostego formularza wyszukiwania, który pozwoli 
 - Dodaj pole tekstowe do wpisania tytułu filmu. Ważne: Pole musi mieć atrybut name="tytul".
 - Dodaj listę rozwijaną (<select>) z wyborem gatunku. Ważne: Lista musi mieć atrybut name="gatunek"
 
+
 ```sql
+
 -- Tworzymy bazę danych
 CREATE DATABASE IF NOT EXISTS wyszukiwarka CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
 USE wyszukiwarka;
