@@ -27,7 +27,7 @@ VALUES
 ```
 
 ## 📝 Wymagania (Formularz HTML)
-Stwórz formularz wysyłający dane metodą `POST` na endpoint `/submit-sweater`. Formularz musi zawierać pola odpowiadające kolumnom z bazy danych:
+Stwórz formularz wysyłający dane metodą `POST` na strone `/submit-sweater.php`. Formularz musi zawierać pola odpowiadające kolumnom z bazy danych:
 1. **Imię** (wymagane, max 50 znaków).
 2. **Nazwisko** (wymagane, max 50 znaków).
 3. **Rozmiar swetra** (wybór jednej z opcji: *S, M, L, XL*).
@@ -38,6 +38,3 @@ Stwórz formularz wysyłający dane metodą `POST` na endpoint `/submit-sweater`
 ## 🧪 Dane testowe
 Użyj danych z `INSERT INTO` powyżej, aby przetestować poprawność działania formularza i zapytania SQL.
 
-### 💡 Wskazówka dla prowadzącego (jak to oceniać):
-* **Podstawowe:** Uczeń tworzy `<form method="POST">`, odpowiednie `<input type="text">`, `<select>`, `<input type="number">`, `<input type="radio">`, `<textarea>`. Zapytanie SQL to `INSERT INTO ... VALUES (?, ?, ?, ?, ?, ?)`.
-* **Bonusowe:** Uczeń wykazuje się kreatywnością. Może użyć funkcji `str_replace()` (PHP), `replace()` (Python) lub napisać krótki skrypt JS `onsubmit`, który zamienia słowa kluczowe na emotikony przed wysłaniem `fetch` / `submit`.
