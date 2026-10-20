@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tung Tung Tung Hasłur</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Długość Hasla: </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSlider" name="sliderDlugosci">
+      <property name="minimum">
+       <number>8</number>
+      </property>
+      <property name="maximum">
+       <number>32</number>
+      </property>
+      <property name="value">
+       <number>20</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelDlugosc">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="wLitery">
+      <property name="text">
+       <string>Wielkie Litery</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="zSpecjalne">
+      <property name="text">
+       <string>Zanki specjalne</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cyfry">
+      <property name="text">
+       <string>Cyfry</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnGeneruj">
+      <property name="text">
+       <string>Generuj Hasło</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="generowaneHaslo">
+      <property name="text">
+       <string>Tu pojawi się twoje nowe hasło</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
