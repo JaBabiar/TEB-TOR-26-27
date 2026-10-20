@@ -91,3 +91,42 @@ INSERT INTO produkty(nazwa,producent,cena) VALUES
 ('Whirlpool WTW7100DW Top Load Washer', 'Whirlpool', 999.00),
 ('Whirlpool Microwave', 'Whirlpool', 299.00)
 ```
+
+
+## 19.10.2026
+
+Twoim zadaniem jest stworzenie prostego formularza wyszukiwania, który pozwoli użytkownikowi wpisać tytuł filmu oraz wybrać jego gatunek. Ponieważ używamy metody GET, dane nie są wysyłane "w tle", ale doklejane do adresu URL w przeglądarce.
+
+- Utwórz plik index.html.
+- Stwórz formularz, który jako metodę przesyłania danych używa GET.
+- Dodaj pole tekstowe do wpisania tytułu filmu. Ważne: Pole musi mieć atrybut name="tytul".
+- Dodaj listę rozwijaną z wyborem gatunku. Ważne: Lista musi mieć atrybut name="gatunek"
+
+
+```php
+
+CREATE DATABASE IF NOT EXISTS wyszukiwarka CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
+USE wyszukiwarka;
+
+CREATE TABLE IF NOT EXISTS filmy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tytul VARCHAR(150) NOT NULL,
+    gatunek VARCHAR(50) NOT NULL,
+    rok INT,
+    INDEX idx_gatunek (gatunek)
+)
+
+-- Wstawiamy dane testowe
+INSERT INTO filmy (tytul, gatunek, rok) VALUES
+('Matrix', 'sci-fi', 1999),
+('Incepcja', 'sci-fi', 2010),
+('Interstellar', 'sci-fi', 2014),
+('Kevin Sam w Domu', 'komedia', 1990),
+('Kac Vegas', 'komedia', 2009),
+('Obcy 8. pasażer Nostromo', 'horror', 1979),
+('Lśnienie', 'horror', 1980),
+('Szybcy i Wściekli', 'akcja', 2001),
+('John Wick', 'akcja', 2014),
+('Gladiator', 'akcja', 2000);
+
+```
