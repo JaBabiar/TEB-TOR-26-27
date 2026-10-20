@@ -27,7 +27,7 @@ VALUES
 ```
 
 ## 📝 Wymagania (Formularz HTML)
-Stwórz formularz wysyłający dane metodą `POST` na endpoint `/submit-sweater`. Formularz musi zawierać pola odpowiadające kolumnom z bazy danych:
+Stwórz formularz wysyłający dane metodą `POST` na strone `/submit-sweater.php`. Formularz musi zawierać pola odpowiadające kolumnom z bazy danych:
 1. **Imię** (wymagane, max 50 znaków).
 2. **Nazwisko** (wymagane, max 50 znaków).
 3. **Rozmiar swetra** (wybór jednej z opcji: *S, M, L, XL*).
