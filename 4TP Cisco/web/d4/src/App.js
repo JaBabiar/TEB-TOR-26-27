@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div style={{ padding: "20px", display: "flex", flexWrap: "wrap", justifyContent: "space-around"}}>
-        <Post 
+        <Post
           style={{width: "30%"}}
           zdj={"https://picsum.photos/200/"}
           autor={"Marcin"}
