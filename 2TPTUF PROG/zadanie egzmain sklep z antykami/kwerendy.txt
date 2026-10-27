@@ -1,0 +1,16 @@
+1.SELECT idMeble, nazwa, plik, styl, cena, opis FROM meble where kategoria = 1;
+Dominik + 
+
+2. INSERT INTO zakupy(idKlienci, idMeble, sztuk) VALUES(1,6,1)
+Oliwier
+
+
+3.SELECT meble.nazwa, meble.cena FROM meble JOIN zakupy ON meble.idMeble = zakupy.idMeble WHERE zakupy.idKlienci = 1
+Oskar
+
+4. SELECT 
+meble.nazwa, klienci.imie, klienci.nazwisko 
+FROM meble 
+JOIN zakupy ON meble.idMeble = zakupy.idMeble
+JOIN klienci ON zakupy.idKlienci = klienci.idKlienci
+Yehor

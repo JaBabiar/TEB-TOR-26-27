@@ -1,0 +1,36 @@
+*{
+    font-family: Georgia;
+}
+
+body{
+    background-color: MistyRose;
+}
+
+header, footer{
+    text-align: center;
+}
+section{
+    width: 70%;
+    height: 700px;
+    overflow: scroll;
+}
+
+aside{
+    width: 30%;
+}
+
+img{
+    width: 90%;
+    text-align: center;
+}
+
+.mebel{
+    margin: 5px;
+    padding: 10px;
+    background-color: LightCoral;
+    border-radius: 20px;
+}
+
+.obraz{
+    text-align: left;
+}
