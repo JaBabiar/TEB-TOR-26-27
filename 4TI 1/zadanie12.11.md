@@ -73,10 +73,6 @@ INSERT INTO produkty(nazwa,producent,cena) VALUES
 ('Puma RS-X Sneaker', 'Puma', 199.00),
 ('Puma Suede Classic', 'Puma', 179.00),
 
--- Levi\'s produkty
-('Levi\'s 511 Slim Jeans', 'Levi\\'s', 249.00),
-('Levi\'s Trucker Jacket', 'Levi\\'s', 299.00),
-
 -- Zara produkty
 ('Zara Basic Cotton Shirt', 'Zara', 89.00),
 ('Zara Denim Jacket', 'Zara', 159.00),
