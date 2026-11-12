@@ -3,6 +3,12 @@
 CREATE DATABASE IF NOT EXISTS 4ti1_sklep_internetowy;
 USE 4ti1_sklep_internetowy;
 
+CREATE TABLE IF NOT EXISTS produkty(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nazwa VARCHAR(255) NOT NULL,
+    producent VARCHAR(255) NOT NULL,
+    cena FLOAT NOT NULL
+);
 -- Tablica producentów i ich produktów (pasujące!)
 INSERT INTO produkty(nazwa,producent,cena) VALUES
 -- Apple produkty
