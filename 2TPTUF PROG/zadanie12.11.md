@@ -1,11 +1,11 @@
-**Zadanie: Obsługa formularzy metodą GET (PHP + MySQL)**
-**Czas pracy:** 25 minut
+Poniżej zaktualizowana wersja kartkówki – baza została rozszerzona o prostą tabelę `zamowienia` (bez relacji/kluczy obcych, żeby uczniowie mogli zrobić zwykły `INSERT`, dokładnie jak na egzaminie INF.03), a do zadania doszedł drugi, uproszczony formularz `POST`.
+
+**Kartkówka: Formularze GET i POST (PHP + MySQL)**
+**Czas pracy:** 35 minut
 
 ---
 
 ### Część 1: Baza danych (do zaimportowania przed startem)
-
-Uruchom poniższy kod SQL w phpMyAdmin, aby utworzyć bazę danych `sklep_kartkowka` oraz tabelę z produktami:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS sklep_kartkowka DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_polish_ci;
@@ -16,6 +16,13 @@ CREATE TABLE produkty (
     nazwa VARCHAR(100) NOT NULL,
     kategoria VARCHAR(50) NOT NULL,
     cena DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE zamowienia (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nazwa_produktu VARCHAR(100) NOT NULL,
+    ilosc INT NOT NULL,
+    imie_klienta VARCHAR(50) NOT NULL
 );
 
 INSERT INTO produkty (nazwa, kategoria, cena) VALUES
@@ -32,9 +39,9 @@ INSERT INTO produkty (nazwa, kategoria, cena) VALUES
 
 ### Część 2: Treść zadania dla ucznia
 
-Utwórz plik `index.php`, który zrealizuje prostą wyszukiwarkę produktów w sklepie internetowym.
+Utwórz plik `index.php`, który obsługuje filtrowanie produktów (GET) oraz składanie prostego zamówienia (POST).
 
-#### 1. Warstwa HTML (Formularz)
+#### 1. Formularz filtrowania (Metoda GET)
 
 Przygotuj formularz wysyłający dane metodą **GET** (do tego samego pliku), zawierający:
 
@@ -47,16 +54,26 @@ Przygotuj formularz wysyłający dane metodą **GET** (do tego samego pliku), za
 
 * **Przycisk zatwierdzający** typu `submit` z napisem *"Filtruj"*.
 
-#### 2. Warstwa PHP i MySQL (Logika i wyświetlanie)
+#### 2. Wyświetlanie listy produktów (PHP + MySQL)
 
-Połącz się z bazą danych `sklep_kartkowka` (serwer `localhost`, użytkownik `root`, bez hasła) i zrealizuj następującą logikę:
+Połącz się z bazą danych `sklep_kartkowka` (`localhost`, `root`, bez hasła):
 
-1. Sprawdź, czy formularz został wysłany i czy pole `kategoria` nie jest puste (`!empty($_GET['kategoria'])`).
-2. **Jeśli wybrano konkretną kategorię:** wykonaj zapytanie pobierające `nazwa` oraz `cena` wyłącznie dla produktów z wybranej kategorii.
-3. **Jeśli nie wybrano kategorii (lub przy pierwszym wejściu na stronę):** wykonaj zapytanie pobierające `nazwa` oraz `cena` dla wszystkich produktów z tabeli.
-4. Wyświetl pobrane produkty w formie listy wypunktowanej (`<ul><li>...</li></ul>`) według wzoru:
-`Nazwa produktu - Cena zł` *(np. Monitor 24 cale 144Hz - 699.00 zł)*.
-5. Zamknij połączenie z bazą danych.
+* Jeśli wybrano konkretną kategorię (`!empty($_GET['kategoria'])`), pobierz `nazwa` oraz `cena` tylko z tej kategorii.
+* W przeciwnym razie pobierz `nazwa` oraz `cena` wszystkich produktów.
+* Wyświetl wyniki jako listę wypunktowaną (`<ul><li>...</li></ul>`) według wzoru: `Nazwa produktu - Cena zł`.
 
+#### 3. Formularz zamówienia (Metoda POST)
 
-Podeślij swój system oceniania (punktację i wymagania), gdy będziesz gotowy – dopasuję do niego arkusz oceny lub kryteria dla uczniów.
+Poniżej listy produktów utwórz drugi formularz wysyłający dane metodą **POST** (do tego samego pliku), zawierający:
+
+* Pole tekstowe `nazwa_produktu` (np. z etykietą *"Nazwa produktu"*).
+* Pole liczbowe `ilosc` (`type="number"`, z etykietą *"Ilość"*).
+* Pole tekstowe `imie_klienta` (z etykietą *"Twoje imię"*).
+* Przycisk `submit` z napisem *"Zamów"*.
+
+#### 4. Obsługa zamówienia w bazie danych (PHP + MySQL)
+
+* Sprawdź, czy formularz POST został wysłany oraz czy wszystkie trzy pola nie są puste (`!empty(...)`).
+* Zapisz dane do tabeli `zamowienia` za pomocą zapytania `INSERT INTO`.
+* Wyświetl pod formularzem krótki komunikat potwierdzający, np.: *"Zamówienie zostało przyjęte!"*.
+* Zamknij połączenie z bazą danych.
