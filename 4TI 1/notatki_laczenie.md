@@ -51,4 +51,3 @@ mysqli_close($id_pol);
 </table>
 ```
 
-```
