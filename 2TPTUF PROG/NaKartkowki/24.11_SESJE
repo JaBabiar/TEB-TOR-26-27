@@ -1,0 +1,43 @@
+Stwórz prostą aplikację składającą się z dwóch plików (`index.php` oraz `panel.php`), która przechowuje imię użytkownika oraz wybrany przez niego motyw kolorystyczny podczas przeglądania strony.
+
+---
+
+### Wymagania funkcjonalne
+
+1. **Plik `index.php`:**
+* Na samej górze pliku uruchom mechanizm sesji.
+* Jeśli w sesji jest już zapisane imię użytkownika, wyświetl powitanie (np. *"Witaj ponownie, Jan!"*) oraz link prowadzący do pliku `panel.php`.
+* Jeśli imienia nie ma w sesji, wyświetl dostępny formularz przesyłający dane metodą **POST** na tę samą stronę (`index.php`). Formularz powinien zawierać pole tekstowe na imię (`<label>` powiązane z `<input>` przez atrybut `for`/`id`) oraz przycisk zatwierdzający.
+* Po przesłaniu formularza (jeśli pole nie jest puste) zapisz imię w tablicy sesyjnej i odśwież/przekieruj stronę lub wyświetl komunikat z linkiem do `panel.php`.
+
+
+2. **Plik `panel.php`:**
+* Na samej górze pliku uruchom mechanizm sesji.
+* Sprawdź, czy użytkownik ma zapisane imię w sesji. Jeśli nie – wyświetl komunikat o braku dostępu i link powrotny do `index.php`.
+* Jeśli imię istnieje, wyświetl je na ekranie.
+* Dodaj formularz wysyłający dane metodą **GET** (na `panel.php`), który pozwoli wybrać ulubiony kolor tła (np. za pomocą listy rozwijanej `<select>` z opcjami: biały, jasnoniebieski, jasnozielony).
+* Odbierz wybrany kolor z tablicy `$_GET`, zapisz go w sesji i ustaw jako kolor tła strony (`background-color` w znaczniku `<body>`), tak aby kolor był pamiętany nawet po ponownym wejściu na `panel.php` bez parametrów w adresie URL.
+* Dodaj przycisk lub link (np. `?akcja=wyloguj` obsługiwany przez `$_GET`), który usunie wszystkie dane z sesji, zniszczy ją i przekieruje użytkownika z powrotem do `index.php`.
+
+
+
+---
+
+### Podpowiedzi prosto z dokumentacji php.net
+
+> **Uruchamianie sesji – `session_start()**`
+> „`session_start()` creates a session or resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.”
+
+> „An associative array containing session variables available to the current script.”
+> ```php
+> $_SESSION["newsession"] = $value;
+> 
+> ```
+
+> **Sprawdzanie, czy zmienna istnieje – `isset()**`
+> „Determine if a variable is declared and is different than `null`.”
+
+> „The `session_unset()` function frees all session variables currently registered.”
+> "In order to kill the session altogether, the session ID must also be unset. If a cookie is used to propagate the session ID (default behavior), then the session cookie must be deleted.” – na potrzeby podstaw wystarczy wyczyszczenie tablicy `$_SESSION = [];` oraz wywołanie `session_destroy()`).*
+
+> „`session_destroy()` destroys all of the data associated with the current session. It does not unset any of the global variables associated with the session, or unset the session cookie.”
